@@ -1,5 +1,4 @@
-const Cupon = require("../domain/entities/cupon.entity");
-const NotFoundError = require("../../domain/errors");
+const Cupon = require("../../domain/entities/cupon.entity");
 const { NotFoundError } = require('../../domain/errors');
 
 class CuponService {
