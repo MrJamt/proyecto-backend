@@ -94,6 +94,75 @@ const swaggerDefinition = {
           },
         },
       },
+      Product: {
+        type: "object",
+        properties: {
+          id: {
+            type: "string",
+            example: "60c72b2f9b1e8a001f8e4cac",
+          },
+          name: {
+            type: "string",
+            example: "Laptop Dell XPS 15",
+          },
+          description: {
+            type: "string",
+            example: "High-performance laptop with 16GB RAM and 512GB SSD",
+          },
+          price: {
+            type: "number",
+            example: 1299.99,
+          },
+          stock: {
+            type: "number",
+            example: 25,
+          },
+          category: {
+            type: "string",
+            example: "Electronics",
+          },
+          imageUrl: {
+            type: "string",
+            example: "https://example.com/images/laptop-dell-xps15.jpg",
+          },
+        },
+      },
+      ProductInput: {
+        type: "object",
+        required: ["name", "price", "stock"],
+        properties: {
+          name: {
+            type: "string",
+            example: "Laptop Dell XPS 15",
+            description: "Product name",
+          },
+          description: {
+            type: "string",
+            example: "High-performance laptop with 16GB RAM and 512GB SSD",
+            description: "Detailed product description",
+          },
+          price: {
+            type: "number",
+            example: 1299.99,
+            description: "Product price in USD",
+          },
+          stock: {
+            type: "number",
+            example: 25,
+            description: "Available quantity in stock",
+          },
+          category: {
+            type: "string",
+            example: "Electronics",
+            description: "Product category",
+          },
+          imageUrl: {
+            type: "string",
+            example: "https://example.com/images/laptop-dell-xps15.jpg",
+            description: "URL of the product image",
+          },
+        },
+      },
     },
   },
   security: [
