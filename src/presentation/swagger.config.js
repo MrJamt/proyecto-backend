@@ -163,6 +163,58 @@ const swaggerDefinition = {
           },
         },
       },
+      LoginInput: {
+        type: "object",
+        required: ["email", "password"],
+        properties: {
+          email: {
+            type: "string",
+            format: "email",
+            example: "admin@example.com",
+            description: "User email address",
+          },
+          password: {
+            type: "string",
+            format: "password",
+            example: "password123",
+            description: "User password",
+          },
+        },
+      },
+      LoginResponse: {
+        type: "object",
+        properties: {
+          token: {
+            type: "string",
+            example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+            description: "JWT authentication token",
+          },
+          user: {
+            type: "object",
+            properties: {
+              id: {
+                type: "string",
+                example: "60c72b2f9b1e8a001f8e4caa",
+              },
+              name: {
+                type: "string",
+                example: "John Doe",
+              },
+              email: {
+                type: "string",
+                example: "admin@example.com",
+              },
+              roles: {
+                type: "array",
+                items: {
+                  type: "string",
+                },
+                example: ["admin"],
+              },
+            },
+          },
+        },
+      },
     },
   },
   security: [
