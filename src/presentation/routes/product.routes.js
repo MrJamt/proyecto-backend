@@ -16,8 +16,8 @@ const productController = new ProductController(productService);
 const router = Router();
 router.get('/', asyncHandler(productController.getAll));
 router.get('/:id', asyncHandler(productController.getById));
-router.post('/', asyncHandler(productController.create));
-router.put('/:id', asyncHandler(productController.update));
-router.delete('/:id', asyncHandler(productController.delete));
+router.post('/', [authenticateToken, isAdmin], asyncHandler(productController.create));
+router.put('/:id', [authenticateToken, isAdmin], asyncHandler(productController.update));
+router.delete('/:id', [authenticateToken, isAdmin], asyncHandler(productController.delete));
 
 module.exports = router;
