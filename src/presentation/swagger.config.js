@@ -7,6 +7,16 @@ const swaggerDefinition = {
     version: '1.0.0',
     description: 'Documentation for the API',
   },
+  tags: [
+    {
+      name: 'Users',
+      description: 'Operations about users',
+    },
+    {
+      name: 'Cupons',
+      description: 'Operations about roles',
+    },
+  ],
   servers: [
     {
       url: `http://localhost:${process.env.PORT || 8080}/api/v1`,
@@ -67,6 +77,56 @@ const swaggerDefinition = {
               type: 'string'
             },
             example: ['user']
+          }
+        }
+      },
+      Cupon: {
+        type: 'object',
+        properties: {
+          id: {
+            type: 'string',
+            example: '60c72b2f9b1e8a001f8e4caa'
+          },
+          code: {
+            type: 'string',
+            example: 'DESCUENTO20'
+          },
+          discount: {
+            type: 'number',
+            example: 20
+          },
+          fromDate: {
+            type: 'string',
+            format: 'date-time',
+            example: '2025-01-01T00:00:00.000Z'
+          },
+          toDate: {
+            type: 'string',
+            format: 'date-time',
+            example: '2025-12-31T23:59:59.000Z'
+          }
+        }
+      },
+      CuponInput: {
+        type: 'object',
+        properties: {
+          code: {
+            type: 'string',
+            example: 'DESCUENTO20'
+          },
+          discount: {
+            type: 'number',
+            example: 20
+          },
+          fromDate: {
+            type: 'string',
+            format: 'date-time',
+            example: '2025-01-01T00:00:00.000Z'
+          },
+          toDate: {
+            type: 'string',
+            format: 'date-time',
+            example: '2025-12-31T23:59:59.000Z'
           }
         }
       }
